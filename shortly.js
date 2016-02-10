@@ -166,6 +166,13 @@ app.post('/signup', function(request, response) {
         });
 });
 
+//LOGOUT
+// '/login/:id'
+app.post('/logout', function(request, response) {
+    request.session.user = null;
+    response.redirect('/login');
+});
+
 
 /************************************************************/
 // Handle the wildcard route last - if all other routes fail
